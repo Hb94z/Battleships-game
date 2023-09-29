@@ -32,8 +32,7 @@ describe("player tests", () => {
   test("hit twice same place ", () => {
     playerBoard.placeShip(bigBoat, [1, 4]);
     computerPlayer.attack([1, 4], playerBoard);
-    console.log(computerPlayer.attack([1, 5], playerBoard));
-    console.log(computerPlayer.attack([1, 5], playerBoard));
+
     expect(computerPlayer.attack([1, 4], playerBoard)).toBe(false);
   });
   test("attack ship randomly", () => {

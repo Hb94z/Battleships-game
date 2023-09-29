@@ -37,6 +37,7 @@ const displayGrid = (player) => {
       if (player.playerName === "player2") {
         boardGrid.addEventListener("click", () => {
           attackShip(player1, [x, y]);
+
           setTimeout(() => {
             attackShip(player2);
           }, 500);
@@ -115,6 +116,7 @@ const displayAttackedCoordinate = (boardDiv, coordinate, attackStatus) => {
     coordinateDiv.classList.add("hit");
     coordinateDiv.classList.remove("ship");
   }
+  coordinateDiv.classList.add("remove-pointer");
 };
 const updateMessage = (message) => {
   messageBox.innerHTML = message;
@@ -124,6 +126,7 @@ const startGame = () => {
     element.remove();
   });
   button.remove();
+  restartButton.addEventListener("click", restart);
   updateMessage("Your Turn");
 };
 const restart = () => {
@@ -139,6 +142,5 @@ const restart = () => {
   displayShip();
 };
 button.addEventListener("click", startGame);
-restartButton.addEventListener("click", restart);
 
 export { displayGrid, displayShip };

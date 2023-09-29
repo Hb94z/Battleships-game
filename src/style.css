@@ -7,14 +7,20 @@ header {
     text-align: center;
     font-weight: bold;
     font-size: 40px;
+    padding-top: 2vh;
     
 }
 footer {
     background-color: grey;
+    color: white;
+    text-align: center;
+    padding-top: 3vh;
 }
 .main {
     display: grid;
     grid-template-rows: 10vh 50vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
 }
 .button-container {
     display: flex;
@@ -25,12 +31,16 @@ footer {
 .grids-container {
     display: grid;
     grid-template-columns: 40fr 10fr 40fr;
+
 }
 .info-box {
     text-align: center;
 }
 .styles {
    border: 5px solid black
+}
+.remove-pointer {
+    pointer-events: none;
 }
 .battleship-grid {
     display: grid;

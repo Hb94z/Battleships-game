@@ -21,7 +21,7 @@ describe("gameBoardMock tests", () => {
 
   test("place ship", () => {
     gameBoardMock.placeShip(bigBoat, [1, 2]);
-    console.log(gameBoardMock.board[1][2]);
+
     expect(gameBoardMock.board[1][6].ship).toBe(bigBoat);
     expect(gameBoardMock.board[1][7].ship).not.toBe(bigBoat);
   });
@@ -52,7 +52,7 @@ describe("gameBoardMock tests", () => {
   test("ship storage", () => {
     gameBoardMock.placeShip(bigBoat, [1, 2]);
     gameBoardMock.placeShip(smallBoat, [4, 2]);
-    console.log(gameBoardMock.ships);
+
     expect(gameBoardMock.ships[1].shipName).toBe("smallBoat");
   });
   test("all ships sunk", () => {
