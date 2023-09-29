@@ -1,7 +1,5 @@
-//const gameBoardMockd = require("./gameBoardMock");
 import gameBoard from "../modules/gameboard";
 import shipFactory from "../modules/ships";
-//const shipFactoryy = require("./ships");
 
 describe("gameBoardMock tests", () => {
   let bigBoat;

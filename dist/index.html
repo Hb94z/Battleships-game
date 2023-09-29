@@ -6,9 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Battleships</title>
 
-    <script src="main.js" defer></script>
+    <script src="bundle.js" defer></script>
   </head>
   <body>
-    <div id="content"></div>
+    <header>Battleships Game</header>
+    <div class="main">
+      <div class="button-container">
+        <button id="action-button">PLAY</button>
+        <button id="restart-button">RESART</button>
+      </div>
+      <div class="grids-container">
+        <div class="player1-grid styles battleship-grid">
+          <div class="overlay filler">COMPUTER</div>
+        </div>
+
+        <div class="info-box styles"></div>
+
+        <div class="player2-grid styles battleship-grid">
+          <div class="overlay filler">PLAYER</div>
+        </div>
+      </div>
+    </div>
+    <footer></footer>
   </body>
 </html>

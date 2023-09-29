@@ -1,8 +1,6 @@
 const shipFactoryy = require("./ships");
 
 const gameBoard = () => {
-  //array of a grid 10x10. so 100 large
-
   let board = Array(10)
     .fill()
     .map(() =>
@@ -24,7 +22,7 @@ const gameBoard = () => {
     let x = coordinate[0];
     let y = coordinate[1];
 
-    //Return if the coordinate is beyond the board and not empty
+    //Return if not possible
     if (axis === "x") {
       if (y + ship.length - 1 > 9) return false;
 
@@ -43,7 +41,7 @@ const gameBoard = () => {
       }
     }
 
-    //Place the ships according to the axis
+    //Place the ships
     if (axis === "x") {
       for (let i = 0; i < ship.length; i++) {
         board[x][y].ship = ship;
@@ -62,11 +60,10 @@ const gameBoard = () => {
   };
 
   const receiveAttack = function receiveAttack(coordinate) {
-    //this takes coordinates. it may have to change to taking x and y once dom and gameloop are attempted with player object too.
     let x = coordinate[0];
     let y = coordinate[1];
-    if (board[x][y].attackedStatus) return false;
 
+    if (board[x][y].attackedStatus) return false;
     board[x][y].attackedStatus = true;
 
     if (board[x][y].ship !== null) {

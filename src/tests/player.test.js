@@ -25,10 +25,23 @@ describe("player tests", () => {
 
     expect(playerBoard.board[1][4].attackedStatus).toBe(true);
   });
+  test("name call ", () => {
+    expect(player1.playerName).toBe("player1");
+  });
+
+  test("hit twice same place ", () => {
+    playerBoard.placeShip(bigBoat, [1, 4]);
+    computerPlayer.attack([1, 4], playerBoard);
+    console.log(computerPlayer.attack([1, 5], playerBoard));
+    console.log(computerPlayer.attack([1, 5], playerBoard));
+    expect(computerPlayer.attack([1, 4], playerBoard)).toBe(false);
+  });
   test("attack ship randomly", () => {
     // add some ships here to test for a hit, otherwise a miss will always occur. player object arguments modified to get
     //this test working.
 
-    expect(computerPlayer.computerAttack(playerBoard)).toBe("miss");
+    expect(computerPlayer.computerAttack(playerBoard).resultOfAttack).toBe(
+      "miss"
+    );
   });
 });
